@@ -14,9 +14,6 @@ function App() {
   const [plans, setPlans] = useState([]);
   const [planMsg, setPlanMsg] = useState("");
 
-  // -----------------------
-  // Python - Registro/Login
-  // -----------------------
   const handleRegister = async () => {
     try {
       const res = await fetch("http://host.docker.internal:8001/register", {
@@ -56,9 +53,7 @@ function App() {
     }
   };
 
-  // -----------------------
-  // Java - Citas
-  // -----------------------
+
   const fetchAppointments = async () => {
     try {
       const res = await fetch("http://localhost:8002/appointments");
@@ -81,9 +76,7 @@ function App() {
     fetchAppointments();
   };
 
-  // -----------------------
-  // Go - Planes
-  // -----------------------
+
   const fetchPlans = async () => {
     try {
       const res = await fetch("http://localhost:8003/plans");
@@ -105,14 +98,12 @@ function App() {
     fetchUsers();
   }, []);
 
-  // -----------------------
-  // JSX
-  // -----------------------
+
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>🌐 Sistema de Microservicios</h1>
 
-      {/* PYTHON */}
+    
       <div style={{ border: "1px solid #ccc", padding: "15px", marginBottom: "20px", borderRadius: "8px" }}>
         <h2 style={{ color: "#3776ab" }}>Microservicio 1: Python (Login) :8001</h2>
         <input placeholder="Usuario" onChange={(e) => setUsername(e.target.value)} style={{ marginRight: "10px" }} />
@@ -129,7 +120,7 @@ function App() {
         </ul>
       </div>
 
-      {/* JAVA */}
+  
       <div style={{ border: "1px solid #ccc", padding: "15px", marginBottom: "20px", borderRadius: "8px" }}>
         <h2 style={{ color: "#f89820" }}>Microservicio 2: Java (Citas) :8002</h2>
         <input placeholder="Paciente" onChange={(e) => setPatientName(e.target.value)} style={{ marginRight: "10px" }} />
@@ -146,7 +137,7 @@ function App() {
         </ul>
       </div>
 
-      {/* GO */}
+   
       <div style={{ border: "1px solid #ccc", padding: "15px", borderRadius: "8px" }}>
         <h2 style={{ color: "#00add8" }}>Microservicio 3: Go (Planes) :8003</h2>
         <div style={{ display: "flex", gap: "20px" }}>
